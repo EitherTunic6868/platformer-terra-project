@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://37c2isidjg7v"]
+
+[ext_resource type="Script" uid="uid://dbobbjxo8bn4k" path="res://Scripts/grass_sign.gd" id="1_c1jhe"]
+[ext_resource type="Texture2D" uid="uid://c580rko8pju8t" path="res://Assets/sprites/world_tileset.png" id="2_2dv6e"]
+[ext_resource type="Script" uid="uid://b6o5ry24k77tr" path="res://Scripts/interaction_area.gd" id="3_eukv7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_22vlk"]
+radius = 14.0
+
+[node name="Grass Sign" type="Node2D" unique_id=1219897057]
+script = ExtResource("1_c1jhe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=695001723]
+texture = ExtResource("2_2dv6e")
+region_enabled = true
+region_rect = Rect2(128, 48, 17, 16)
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1968891977]
+script = ExtResource("3_eukv7")
+action_name = "read"
+metadata/_custom_type_script = "uid://b6o5ry24k77tr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=897457926]
+shape = SubResource("CircleShape2D_22vlk")
